@@ -1,13 +1,20 @@
+// $("#currentDay").text(moment().format("dddd, MMM Do YYYY"));
+
 $(document).ready(function () {// essentially load 1)html & 2)css first.
     //display current day & time.
     $("#currentDay").text(moment().format("dddd, MMM Do YYYY"));
 
-
+    //Assign saveBtn click listener for user input and time stamp
+    $(".saveBtn").on("click", function () {
         //get nearby values.
         console.log(this);
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
 
+        //set items in local storage.
+        localStorage.setItem(time, text);
+    })
+    //load any saved data from LocalStorage - do this for each hour created.
 
     function hourTracker() {
         //get current number of hours.
@@ -38,6 +45,7 @@ $(document).ready(function () {// essentially load 1)html & 2)css first.
     }
     hourTracker();
 })
+
 $("#hour9 .description").val(localStorage.getItem("hour9"));
 $("#hour10 .description").val(localStorage.getItem("hour10"));
 $("#hour11 .description").val(localStorage.getItem("hour11"));
@@ -48,5 +56,3 @@ $("#hour15 .description").val(localStorage.getItem("hour15"));
 $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
 $("#hour18 .description").val(localStorage.getItem("hour18"));
-
-
