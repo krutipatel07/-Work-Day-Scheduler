@@ -14,7 +14,6 @@ $(document).ready(function () {// essentially load 1)html & 2)css first.
         //set items in local storage.
         localStorage.setItem(time, text);
     })
-    //load any saved data from LocalStorage - do this for each hour created.
 
     function hourTracker() {
         //get current number of hours.
@@ -45,7 +44,7 @@ $(document).ready(function () {// essentially load 1)html & 2)css first.
     }
     hourTracker();
 })
-
+ //load any saved data from LocalStorage for each hour created.
 $("#hour9 .description").val(localStorage.getItem("hour9"));
 $("#hour10 .description").val(localStorage.getItem("hour10"));
 $("#hour11 .description").val(localStorage.getItem("hour11"));
