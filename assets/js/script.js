@@ -2,6 +2,13 @@ $(document).ready(function () {// essentially load 1)html & 2)css first.
     //display current day & time.
     $("#currentDay").text(moment().format("dddd, MMM Do YYYY"));
 
+
+        //get nearby values.
+        console.log(this);
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+
+
     function hourTracker() {
         //get current number of hours.
         var currentHour = moment().hour();
